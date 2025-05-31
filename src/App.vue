@@ -1,13 +1,14 @@
 <template>
-  <NavBar/>
+  <Estudiante/>
 <router-view/>
 </template>
 <script>
-import NavBar from '@/components/NavBar.vue';
+import Estudiante from '@/components/Estudiante.vue';
+
  
 export default {
   components: {
-    NavBar,
+    Estudiante,
   }
 }
 </script>

@@ -2,8 +2,10 @@
   <div class="container">
     <label for="id_nombre">Nombre:</label>
     <input v-model="nuevoNombre" id="id_nombre" type="text" />
+    <span v-if="mensaje.nombre">{{ mensaje.nombre }}</span>
     <label for="id_apellido">Apellido:</label>
     <input v-model="nuevoApellido" id="id_apellido" type="text" />
+    <span v-if="mensaje.apellido">{{ mensaje.apellido }}</span>
     <label for="id_edad">Edad:</label>
     <input v-model="nuevoEdad" id="id_edad" type="text" />
     <label for="id_nacional">nacionalidad:</label>
@@ -38,6 +40,13 @@ export default {
         { nombre: "jessica", apellido: "teran" },
         { nombre: "ana", apellido: "castillo" },
       ],
+      mostrar: false,
+      nombreMensaje: false,
+      apellidoMensaje: false,
+      mensaje: {
+        nombre: null,
+        apellido: null,
+      },
     };
   },
   methods: {
@@ -55,6 +64,10 @@ export default {
     obtenerPathVariable() {
       const cedula = this.$route.params.cedula;
       console.log(cedula);
+      const anio = this.$route.query.anio;
+      console.log(anio);
+      const mes = this.$route.query.mes;
+      console.log(mes);
     },
   },
 };
