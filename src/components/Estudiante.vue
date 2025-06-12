@@ -70,6 +70,43 @@ export default {
       console.log(mes);
     },
   },
+  beforeCreate() {
+    console.log('beforeCreate');
+  },
+  created() {
+    console.log('created');
+  },
+  beforeMount() {
+    console.log('beforeMount');
+  },
+  mounted() {
+    console.log('mounted');
+    const cedula = this.$route.params.cedula;
+      console.log(cedula);
+      const anio = this.$route.query.anio;
+      console.log(anio);
+      const mes = this.$route.query.mes;
+      console.log(mes);
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate');
+  },
+  updated() {
+    console.log('updated');
+  },
+  beforeDestroy() {
+    console.log('beforeDestroy');
+  },
+  destroyed() {
+    console.log('destroyed');
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount');
+  },
+  unmounted() {
+    console.log('unmounted');
+  },
+
 };
 </script>
 

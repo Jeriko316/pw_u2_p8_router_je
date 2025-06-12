@@ -24,9 +24,7 @@ const obtenerArregloNumerico=(longitud)=>{
     return vector;
 }
 
-function obtenerAleatorio (min, max) {
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
+
 
 const obtenerArregloPokemon = async (arregloNumerico) =>{
     const vector = [];
@@ -53,3 +51,11 @@ export const obtenerOpcionesFachada = async (longitud) => {
     return  await obtenerOpciones(longitud);
 }
 
+
+function obtenerAleatorio (min, max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+export const obtenerAleatorioFachada = async (max , min) => {
+    return await obtenerAleatorio(min,max);
+}

@@ -1,8 +1,9 @@
 <template>
   <div class="image-container">
-    <img class="ocultar" :src="imagenFuente" alt="" />
+    <img v-if="!mostrarImagen" class="ocultar" :src="imagenFuente" alt="No se puede renderizar pokemon" />
 
-    <img v-if="mostrar" :src="imagenFuente" alt="" />
+    <img v-if="mostrarImagen" :src="imagenFuente" alt="" />
+    {{ mensaje }}
   </div>
 </template>
 
@@ -27,7 +28,7 @@ export default {
   },
   computed: {
     imagenFuente() {
-      return `//raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
     },
   },
 };
