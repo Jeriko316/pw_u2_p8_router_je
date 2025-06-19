@@ -1,15 +1,18 @@
 <template>
-  <PokemonView />
+  
+  <ResponsivoView/>
   
 </template>
 <script>
 //import Estudiante from '@/components/Estudiante.vue';
-import PokemonView from "@/views/PokemonView.vue";
+//import PokemonView from "@/views/PokemonView.vue";
+import ResponsivoView from "@/views/ResponsivoView.vue";
 
 export default {
   name: "App",
   components: {
-    PokemonView,
+  
+    ResponsivoView
   },
 };
 </script>

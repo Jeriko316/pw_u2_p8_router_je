@@ -1,70 +1,63 @@
 <template>
-    {{ mensaje2 }}
-  <div class="options-container">
-  
+      <h3>{{ mensaje2 }}</h3>
+  <div class="option-container">
     <ul>
-      <li
-        @click="comunicarClick(pokemon.id)"
-        v-for="pokemon in pokemons"
-        :key="pokemon.id"
-      >
-        {{ pokemon.nombre }}
-      </li>
+      <li @click="comunicarclick(pokemon.id)" v-for="pokemon in pokemons" :key="pokemon.id">{{ pokemon.nombre }}</li>
     </ul>
   </div>
 </template>
-
+ 
 <script>
+ 
 export default {
+    data() {
+    return {
+      mensaje2:'mensaje2'
+    }
+  },
   props: {
     pokemons: {
       type: Array,
-      required: true,
+      required: true
     },
   },
-  data() {
-    return {
-      mensaje2: "mensaje2",
-    };
-  },
-  methods: {
-    comunicarClick(id) {
-      console.log("click.....");
-      console.log(id);
-      const objetoEnviado = {
-        atributo1: id,
-        atributo2: "Erick",
-        atributo3: true,
-      };
-      this.$emit(
-        "seleccionado",
-        objetoEnviado
-      ); /*sirve para emitir un comuicado a su padre*/
+  methods:{
+    comunicarclick(id){
+      console.log("Click...");
+      console.log("Id del hijo: "+id)
+     
+      const objetoEviado={
+        atributo:id,
+        atributo2:"Gaby",
+        atributo3:"dos "
+      }
+      this.$emit('seleccionado',objetoEviado)
     },
   },
+ 
 };
 </script>
-
+ 
 <style>
 ul {
   list-style-type: none;
 }
-
+ 
 li {
-  background: white;
+  background: rgb(211, 243, 105);
   border-radius: 5px;
-  border: 1px solid rgb(0, 0, 0, 2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   margin-bottom: 10px;
   width: 250px;
 }
-
-.options-container {
+ 
+.option-container {
   display: flex;
   justify-content: center;
 }
-
+ 
 li:hover {
-  background: rgb(0, 0, 0, 0.1);
+  background: rgba(150, 239, 179, 0.742);
 }
 </style>

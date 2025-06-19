@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import EstudianteView from '../views/EstudianteView.vue'
-import ContadorView from '../views/ContadorView.vue'
-import PokemonView from '../views/PokemonView.vue'
+import HomeView from '@/views/HomeView.vue'
+import PokemonView from '@/views/PokemonView.vue'
+import ResponsivoView from '@/views/ResponsivoView.vue'
 
 const routes = [
   {
@@ -11,35 +10,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/estudiante/:cedula',
-    name: 'estudianteView',
-    component: EstudianteView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/contador/numeros',
-    name: 'contadorView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "contadorVIew" */ '../views/ContadorView.vue')
-  },
-   {
-    path: '/pokemon/',
-    name: 'pokemonView',
+    path: '/pokemon',
+    name: 'pokemon',
     component: PokemonView
   },
+  {
+    path: '/responsivo',
+    name: 'responsivo',
+    component: ResponsivoView
+  }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
