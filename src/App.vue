@@ -1,18 +1,20 @@
 <template>
   
-  <ResponsivoView/>
+  <BuscarEstudianteView/>
   
 </template>
 <script>
 //import Estudiante from '@/components/Estudiante.vue';
 //import PokemonView from "@/views/PokemonView.vue";
-import ResponsivoView from "@/views/ResponsivoView.vue";
+//import ResponsivoView from "@/views/ResponsivoView.vue";
+import ApiMatriculaView from "@/views/ApiMatriculaView.vue"
+import BuscarEstudianteView from "@/views/BuscarEstudianteView.vue"
 
 export default {
   name: "App",
   components: {
   
-    ResponsivoView
+    BuscarEstudianteView
   },
 };
 </script>
